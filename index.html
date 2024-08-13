@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Puppy's Choice - Explore high-quality pet products to keep your furry friends happy and healthy.">
+        <meta name="keywords" content="pet products, puppy's choice, pet care, pet accessories, dog care">
+        <title>Puppy's Choice - Home</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;700&display=swap');
+
+            body {
+                font-family: 'Raleway', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+
+            header {
+                background-color: #FFB22C;
+                padding: 10px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            header img {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+            }
+
+            header h1 {
+                margin: 0;
+                margin-left: 2%;
+                font-size: 2.5em;
+                color: #333;
+                font-family: 'Pacifico', cursive;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+            }
+
+            nav a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: #333;
+                font-size: 1.2em;
+                transition: color 0.3s;
+            }
+
+            nav a:hover {
+                color: #000;
+            }
+
+            .content {
+                padding: 0;
+                text-align: center;
+                position: relative;
+            }
+
+            .slideshow-container {
+                position: relative;
+                max-width: 100%;
+                margin: auto;
+            }
+
+            .slides {
+                display: none;
+                width: 100%;
+                height: 70vh;
+                object-fit: cover;
+                transition: opacity 2s ease-in-out;
+            }
+
+            .active {
+                display: block;
+                opacity: 1;
+            }
+
+            .center-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: #f7d548;
+                font-family: 'Raleway', sans-serif;
+                font-size: 3em;
+                font-weight: 700;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                padding: 0;
+            }
+
+            .products {
+                padding: 20px;
+                text-align: center;
+                background-color: #fff;
+                position: relative;
+            }
+
+            .product-list {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .product {
+                border: 2px solid #c5a638;
+                border-radius: 5px;
+                padding: 20px;
+                text-align: center;
+                width: 250px;
+                transition: transform 0.3s;
+                background-color: #f9f9f9;
+                cursor: pointer;
+            }
+
+            .product img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .product:hover {
+                transform: scale(1.05);
+            }
+
+            .view-details {
+                margin-top: 10px;
+                display: inline-block;
+                padding: 5px 10px;
+                background-color: #c5a638;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+            .view-details:hover {
+                background-color: #a88a2e;
+            }
+
+            .view-more-container {
+                text-align: right;
+                margin: 0 0 20px;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .view-more {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #c5a638;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+            .view-more:hover {
+                background-color: #a88a2e;
+            }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            footer a {
+                color: #c5a638;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+            .social-icons a {
+                margin: 0 10px;
+                color: #c5a638;
+                transition: color 0.3s;
+            }
+
+            .social-icons a:hover {
+                color: #fff;
+            }
+
+            @media (max-width: 768px) {
+                nav a {
+                    font-size: 1em;
+                    margin: 0 10px;
+                }
+
+                .product {
+                    width: 100%;
+                }
+
+                header h1 {
+                    font-size: 1.8em;
+                }
+
+                .center-text {
+                    font-size: 2em;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <img src="images/logo.jpg" alt="Puppy's Choice Logo">
+            <h1>LabPetPH</h1>
+            <nav>
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="products.html"><i class="fas fa-paw"></i> Products</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="slideshow-container">
+                <div class="center-text">Quality Products for Happy, Healthy Pets</div>
+                <img class="slides active" src="images/center image/center-image.jpg" alt="Center Image 1">
+                <img class="slides" src="images/center image/center-image2.jpg" alt="Center Image 2">
+                <img class="slides" src="images/center image/center-image3.jpg" alt="Center Image 3">
+            </div>
+        </div>
+        <div id="products-section" class="products">
+            <div class="view-more-container">
+                <a class="view-more" href="products.html">View More</a>
+            </div>
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product" onclick="location.href='products.html'">
+                    <img src="images/products/madre de cacao.jpg" alt="Madre De Cacao Shampoo">
+                    <h3>Madre De Cacao Shampoo</h3>
+                    <p>Natural pet shampoo for healthy skin and coat.</p>
+                </div>
+                <div class="product" onclick="location.href='products.html'">
+                    <img src="images/products/vco.jpg" alt="VCO + Sulfur Shampoo Bar">
+                    <h3>VCO + Sulfur Shampoo Bar</h3>
+                    <p>Medicated shampoo bar for sensitive skin.</p>
+                </div>
+                <div class="product" onclick="location.href='products.html'">
+                    <img src="images/product3.jpg" alt="Product 3">
+                    <h3>Product 3</h3>
+                    <p>Effective treatment for fleas and ticks.</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 LabPetPH. All rights reserved.</p>
+        </footer>
+
+        <script>
+            let slideIndex = 0;
+            const slides = document.getElementsByClassName("slides");
+
+            function showSlides() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active");
+                    slides[i].style.opacity = "0";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].classList.add("active");
+                slides[slideIndex - 1].style.opacity = "1";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+
+            showSlides();
+        </script>
+    </body>
+
+</html>

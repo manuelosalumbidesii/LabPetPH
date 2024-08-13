@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Madre De CaoCao Details</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f8f8f8;
+            }
+
+            header {
+                background-color: #ffcc00;
+                padding: 10px 0;
+                text-align: center;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 2.5em;
+                color: #333;
+            }
+
+            .back-button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #ffcc00;
+                color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 20px;
+                position: fixed;
+                top: 73px;
+                left: 20px;
+                transition: background-color 0.3s;
+            }
+
+            .back-button:hover {
+                background-color: #e6b800;
+            }
+
+            .content {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .details {
+                text-align: center;
+                font-style: italic;
+                margin-bottom: 20px;
+            }
+
+            .details h2 {
+                font-size: 2em;
+                margin-bottom: 10px;
+            }
+
+            .details p {
+                font-size: 1.2em;
+                margin: 5px 0;
+            }
+
+            .product-gallery {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+                max-width: 1200px;
+                width: 100%;
+            }
+
+            .product-detail {
+                border: 2px solid #ccc;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .product-detail img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto 10px auto;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            @media (max-width: 768px) {
+                .product-gallery {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Madre De CaoCao Details</h1>
+        </header>
+        <a class="back-button" href="../products.html">Back to Products</a>
+        <div class="content">
+            <div class="details">
+                <h2>𝑺𝒎𝒐𝒐𝒕𝒉 𝑻𝒂𝒊𝒍 𝐌𝐀𝐃𝐑𝐄 𝐃𝐄 𝐂𝐀𝐂𝐀𝐎</h2>
+                <p>MEDICATED PET SHAMPOO BAR</p>
+                <p>🍃100% Organic</p>
+            </div>
+            <div class="product-gallery">
+                <div class="product-detail">
+                    <img src="../images/products/madre de cacao/madre de cacao.jpg" alt="Madre De CaoCao Image 1">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/madre de cacao/madre2.jpg" alt="Madre De CaoCao Image 2">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/madre de cacao/madre3.jpg" alt="Madre De CaoCao Image 3">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/madre de cacao/madre4.jpg" alt="Madre De CaoCao Image 4">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/madre de cacao/madre5.jpg" alt="Madre De CaoCao Image 4">
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

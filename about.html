@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Learn more about LabPetPH, your trusted provider of quality pet products.">
+        <meta name="keywords" content="about us, LabPetPH, pet products, company information">
+        <title>LabPetPH - About Us</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;700&display=swap');
+
+            body {
+                font-family: 'Raleway', sans-serif;
+                margin: 0;
+                padding: 0;
+                color: #333;
+            }
+
+            header {
+                background-color: #FFB22C;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            header h1 {
+                font-size: 2.8em;
+                color: #333;
+                font-family: 'Pacifico', cursive;
+                margin: 0;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: #333;
+                font-size: 1.2em;
+                transition: color 0.3s;
+            }
+
+            nav a:hover {
+                color: #000;
+            }
+
+            .content-section {
+                padding: 50px 20px;
+                text-align: center;
+            }
+
+            .content-section:nth-child(odd) {
+                background-color: #fff9ef;
+            }
+
+            .content-section:nth-child(even) {
+                background-color: #ffffff;
+            }
+
+            .content-section h2 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .content-section p {
+                font-size: 1.2em;
+                line-height: 1.8;
+                margin-bottom: 40px;
+                color: #555;
+            }
+
+            .mission-section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 40px;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .mission-card {
+                background-color: #fff;
+                border: 2px solid #c5a638;
+                border-radius: 10px;
+                padding: 20px;
+                width: 460px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            .mission-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .mission-card h3 {
+                font-size: 1.8em;
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .mission-card p {
+                font-size: 1.1em;
+                color: #555;
+                line-height: 1.6;
+            }
+
+            .map-section {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 50px 20px;
+            }
+
+            .map-description {
+                flex: 1;
+                padding-right: 20px;
+            }
+
+            .map-description h2 {
+                font-size: 2em;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .map-description p {
+                font-size: 1.2em;
+                line-height: 1.8;
+                color: #555;
+            }
+
+            .map-container {
+                flex: 1;
+                margin-left: 20px;
+            }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 20px 0;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+                margin-top: 40px;
+            }
+
+            footer a {
+                color: #c5a638;
+                text-decoration: none;
+                margin: 0 10px;
+                transition: color 0.3s;
+            }
+
+            footer a:hover {
+                color: #fff;
+            }
+
+            .social-icons a {
+                margin: 0 10px;
+                color: #c5a638;
+                transition: color 0.3s;
+                font-size: 1.5em;
+            }
+
+            .social-icons a:hover {
+                color: #fff;
+            }
+
+            @media (max-width: 768px) {
+                header h1 {
+                    font-size: 2.2em;
+                }
+
+                nav a {
+                    font-size: 1em;
+                }
+
+                .mission-section {
+                    flex-direction: column;
+                }
+
+                .mission-card {
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+                .map-section {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .map-container,
+                .map-description {
+                    width: 100%;
+                    margin-left: 0;
+                    text-align: center;
+                }
+
+                .map-container iframe {
+                    width: 100%;
+                    height: 300px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>LabPetPH</h1>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="products.html"><i class="fas fa-paw"></i> Products</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </header>
+
+        <div class="content-section">
+            <h2>About Us</h2>
+            <p>Welcome to LabPetPH! We are committed to delivering top-quality products that keep your pets happy,
+                healthy, and well-cared for.</p>
+            <p>Our mission is simple: to provide pet owners with reliable, affordable, and premium care products for
+                their furry friends. We believe in the bond between pets and their owners, and our products are designed
+                to nurture and strengthen that bond.</p>
+        </div>
+
+        <div class="content-section mission-section">
+            <div class="mission-card">
+                <h3>Our Vision</h3>
+                <p>To become the leading provider of pet care products in the region, known for our quality,
+                    innovation, and customer satisfaction.</p>
+            </div>
+            <div class="mission-card">
+                <h3>Our Mission</h3>
+                <p>To offer a comprehensive range of pet care products that ensure the well-being and happiness of
+                    pets, while fostering a strong community of pet lovers.</p>
+            </div>
+        </div>
+
+        <div class="content-section map-section">
+            <div class="map-description">
+                <h2>Our Location</h2>
+                <p>LabPetPH is conveniently located in the heart of Naga City, Camarines Sur, Philippines. Visit us to
+                    explore our wide range of high-quality pet products and speak with our knowledgeable staff about
+                    your pet care needs.</p>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.477841141256!2d123.18456731538088!3d13.620511090441997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a1f55dc4f3f94f%3A0x2b0a4f5d9eb5a1d4!2sNaga%20City%2C%20Camarines%20Sur%2C%20Philippines!5e0!3m2!1sen!2sph!4v1636542388978!5m2!1sen!2sph"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 LabPetPH. All rights reserved.</p>
+        </footer>
+    </body>
+
+</html>
