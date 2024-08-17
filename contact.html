@@ -24,18 +24,18 @@
 
             header {
                 background-color: #FFB22C;
-                padding: 15px 20px;
+                padding: 10px 20px;
                 display: flex;
-                justify-content: flex-start;
                 align-items: center;
+                justify-content: space-between;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                flex-wrap: wrap;
             }
 
             header img {
                 height: 60px;
                 width: 60px;
                 border-radius: 50%;
-                margin-right: 15px;
             }
 
             header h1 {
@@ -43,19 +43,25 @@
                 font-size: 2.5em;
                 color: #333;
                 font-family: 'Pacifico', cursive;
+                flex: 1;
+                text-align: center;
+                margin-left: -34%;
             }
 
             nav {
-                margin-left: auto;
                 display: flex;
-                gap: 20px;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                flex-wrap: wrap;
             }
 
             nav a {
+                margin: 0 15px;
                 text-decoration: none;
                 color: #333;
-                font-size: 1.1em;
-                transition: color 0.3s ease;
+                font-size: 1.2em;
+                transition: color 0.3s;
             }
 
             nav a:hover {
@@ -155,7 +161,8 @@
                 color: #fff;
                 text-align: center;
                 padding: 20px 0;
-                margin-top: 40px;
+                margin-top: auto;
+                width: 100%;
             }
 
             footer a {
@@ -171,11 +178,23 @@
 
             @media (max-width: 768px) {
                 header h1 {
-                    font-size: 2em;
+                    font-size: 1.8em;
+                    margin-left: 0;
+                    text-align: center;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+
+                nav {
+                    width: 100%;
+                    justify-content: center;
                 }
 
                 nav a {
                     font-size: 1em;
+                    margin: 10px 0;
+                    width: 100%;
+                    text-align: center;
                 }
 
                 .contact-card {

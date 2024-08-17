@@ -48,39 +48,40 @@
                 padding: 20px;
                 display: flex;
                 justify-content: center;
-                flex-wrap: wrap;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .details {
+                text-align: center;
+                font-style: italic;
+                margin-bottom: 40px;
+                width: 100%;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
             }
 
             .product-detail {
                 border: 2px solid #ccc;
                 padding: 20px;
                 background-color: #fff;
-                max-width: 800px;
                 border-radius: 10px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                margin: 10px;
-                flex: 1 1 45%;
-                box-sizing: border-box;
             }
 
             .product-detail img {
                 max-width: 100%;
                 height: auto;
                 display: block;
-                margin: 0 auto 10px auto;
+                margin: 0 auto;
                 border-radius: 10px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .product-detail div {
-                padding: 20px;
-                text-align: center;
-            }
-
-            .details {
-                text-align: center;
-                font-style: italic;
-                margin-bottom: 20px;
             }
         </style>
     </head>
@@ -94,36 +95,24 @@
             <div class="details">
                 <h2>𝑺𝒎𝒐𝒐𝒕𝒉 𝑻𝒂𝒊𝒍 𝐌𝐀𝐃𝐑𝐄 𝐃𝐄 𝐂𝐀𝐂𝐀𝐎</h2>
                 <p>MEDICATED PET SHAMPOO BAR</p>
-                <p>𝑺𝒎𝒐𝒐𝒕𝒉 𝑻𝒂𝒊𝒍 𝐕𝐂𝐎 + 𝐒𝐔𝐋𝐅𝐔𝐑
-                    MEDICATED PET SHAMPOO BAR
-                    Contains Sulfur, Madre de cacao, Aloe vera, and VCO which are known products for healing and
-                    treatment of skin problems
-                    such as mange, ( sarcoptic mange /scabies) , contact dermatitis,eczema, pruritus, skin
-                    irritation/allergies. It also
-                    relieves hotspots wounds, stings and flea bites.
-                    Aloe vera, Madre de Cacao and VCO has anti oxidant properties for a moisturized skin and shiny pet's
-                    coat.
-                </p>
+                <p>𝑺𝒎𝒐𝒐𝒕𝒉 𝑻𝒂𝒊𝒍 𝐕𝐂𝐎 + 𝐒𝐔𝐋𝐅𝐔𝐑</p>
             </div>
-            <div class="product-detail">
-                <img src="../images/products/vco-sulfur/vco.jpg" alt="Madre De CaoCao Image 1">
-                <div></div>
-            </div>
-            <div class="product-detail">
-                <img src="../images/products/vco-sulfur/vco1.jpg" alt="Madre De CaoCao Image 2">
-                <div></div>
-            </div>
-            <div class="product-detail">
-                <img src="../images/products/vco-sulfur/vco2.jpg" alt="Madre De CaoCao Image 3">
-                <div></div>
-            </div>
-            <div class="product-detail">
-                <img src="../images/products/vco-sulfur/vco3.jpg" alt="Madre De CaoCao Image 4">
-                <div></div>
-            </div>
-            <div class="product-detail">
-                <img src="../images/products/vco-sulfur/vco4.jpg" alt="Madre De CaoCao Image 5">
-                <div></div>
+            <div class="grid-container">
+                <div class="product-detail">
+                    <img src="../images/products/vco-sulfur/vco.jpg" alt="Madre De CaoCao Image 1">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/vco-sulfur/vco1.jpg" alt="Madre De CaoCao Image 2">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/vco-sulfur/vco2.jpg" alt="Madre De CaoCao Image 3">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/vco-sulfur/vco3.jpg" alt="Madre De CaoCao Image 4">
+                </div>
+                <div class="product-detail">
+                    <img src="../images/products/vco-sulfur/vco4.jpg" alt="Madre De CaoCao Image 4">
+                </div>
             </div>
         </div>
     </body>

@@ -30,6 +30,7 @@
                 align-items: center;
                 justify-content: space-between;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex-wrap: wrap;
             }
 
             header img {
@@ -43,7 +44,9 @@
                 font-size: 2.5em;
                 color: #333;
                 font-family: 'Pacifico', cursive;
-                margin-left: 2%;
+                margin-left: -26%;
+                flex: 1;
+                text-align: center;
             }
 
             nav {
@@ -51,6 +54,7 @@
                 justify-content: center;
                 align-items: center;
                 margin-left: auto;
+                flex-wrap: wrap;
             }
 
             nav a {
@@ -65,6 +69,28 @@
                 color: #000;
             }
 
+            @media (max-width: 768px) {
+                header h1 {
+                    font-size: 1.8em;
+                    margin-left: 0;
+                    text-align: center;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+
+                nav {
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                nav a {
+                    font-size: 1em;
+                    margin: 10px 0;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
             .search-bar {
                 display: flex;
                 align-items: center;
@@ -72,7 +98,6 @@
                 margin: 20px auto 10px;
                 width: 80%;
                 border-radius: 30px;
-
             }
 
             .search-bar input {
@@ -81,7 +106,6 @@
                 border: 1px solid #FFB22C;
                 border-radius: 30px;
                 font-size: 1em;
-
             }
 
             .search-bar i {
@@ -100,10 +124,9 @@
             .filter-bar select {
                 padding: 10px;
                 font-size: 1em;
-                border-radius: 5px;
+                border-radius: 30px;
                 border: 1px solid #FFB22C;
                 width: 50%;
-                border-radius: 30px;
             }
 
             .content-section {
@@ -132,17 +155,6 @@
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 20px;
                 justify-items: center;
-            }
-
-            .shampoos {
-                padding: 20px;
-                border-radius: 10px;
-            }
-
-            .treatments {
-
-                padding: 20px;
-                border-radius: 10px;
             }
 
             .product {
@@ -224,22 +236,18 @@
             }
 
             @media (max-width: 768px) {
-                nav a {
-                    font-size: 1em;
-                    margin: 0 10px;
-                }
-
-                header h1 {
-                    font-size: 1.8em;
-                }
-
-                .product {
-                    width: 100%;
-                }
 
                 .search-bar,
                 .filter-bar {
                     width: 95%;
+                }
+
+                .products-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                }
+
+                .product {
+                    max-width: 100%;
                 }
             }
         </style>
@@ -279,7 +287,7 @@
                             onclick="location.href='productss/madre-de-cacao.html'">
                         <h3>Madre De Cacao Shampoo</h3>
                         <p>Natural pet shampoo for healthy skin and coat.</p>
-                        <p class="price">₱999.99</p>
+                        <p class="price">₱700.99</p>
                         <a class="view-details" href="productss/madre-de-cacao.html">View Details</a>
                     </div>
                     <div class="product" data-name="vco sulfur shampoo medicated sensitive skin">
@@ -287,7 +295,7 @@
                             onclick="location.href='productss/vco-sulfur.html'">
                         <h3>VCO + Sulfur Shampoo Bar</h3>
                         <p>Medicated shampoo bar for sensitive skin.</p>
-                        <p class="price">₱749.99</p>
+                        <p class="price">500.99</p>
                         <a class="view-details" href="productss/vco-sulfur.html">View Details</a>
                     </div>
                 </div>

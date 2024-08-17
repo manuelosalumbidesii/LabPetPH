@@ -27,6 +27,7 @@
                 align-items: center;
                 justify-content: space-between;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                flex-wrap: wrap;
             }
 
             header img {
@@ -37,10 +38,12 @@
 
             header h1 {
                 margin: 0;
-                margin-left: 2%;
+                margin-left: -34%;
                 font-size: 2.5em;
                 color: #333;
                 font-family: 'Pacifico', cursive;
+                flex: 1;
+                text-align: center;
             }
 
             nav {
@@ -48,6 +51,7 @@
                 justify-content: center;
                 align-items: center;
                 margin-left: auto;
+                flex-wrap: wrap;
             }
 
             nav a {
@@ -196,17 +200,30 @@
             }
 
             @media (max-width: 768px) {
-                nav a {
-                    font-size: 1em;
-                    margin: 0 10px;
-                }
-
-                .product {
-                    width: 100%;
+                header {
+                    padding: 10px;
+                    flex-direction: column;
+                    align-items: center;
                 }
 
                 header h1 {
                     font-size: 1.8em;
+                    margin-left: 0;
+                    margin-bottom: 10px;
+                }
+
+                nav {
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                nav a {
+                    font-size: 1em;
+                    margin: 10px 0;
+                }
+
+                .product {
+                    width: 100%;
                 }
 
                 .center-text {
