@@ -114,19 +114,62 @@
                 cursor: pointer;
             }
 
-            .filter-bar {
+            .category-choice {
                 display: flex;
                 justify-content: center;
-                margin: 0 auto 20px;
+                margin: 20px auto;
                 width: 80%;
             }
 
-            .filter-bar select {
-                padding: 10px;
+            .category-choice button {
+                padding: 15px 30px;
+                font-size: 1.5em;
+                margin: 0 10px;
+                background-color: #c5a638;
+                color: #333;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+                width: 200px;
+            }
+
+            .category-choice button:hover {
+                background-color: #a88a2e;
+                transform: scale(1.05);
+            }
+
+            .category-choice button.active {
+                background-color: #4CAF50;
+                color: #fff;
+            }
+
+            .subcategory-choice {
+                display: none;
+                justify-content: center;
+                margin: 20px auto;
+                width: 80%;
+            }
+
+            .subcategory-choice button {
+                padding: 10px 20px;
                 font-size: 1em;
-                border-radius: 30px;
-                border: 1px solid #FFB22C;
-                width: 50%;
+                margin: 5px;
+                background-color: #e3b645;
+                color: #333;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .subcategory-choice button:hover {
+                background-color: #b98d29;
+            }
+
+            .subcategory-choice button.active {
+                background-color: #4CAF50;
+                color: #fff;
             }
 
             .content-section {
@@ -238,7 +281,8 @@
             @media (max-width: 768px) {
 
                 .search-bar,
-                .filter-bar {
+                .category-choice,
+                .subcategory-choice {
                     width: 95%;
                 }
 
@@ -253,7 +297,7 @@
         </style>
     </head>
 
-    <body>
+    <body onload="initializePage()">
         <header>
             <img src="images/logo.jpg" alt="Labpeth Logo">
             <h1>Labpeth Products</h1>
@@ -270,75 +314,357 @@
             <i class="fas fa-paw"></i>
         </div>
 
-        <div class="filter-bar">
-            <select id="categoryFilter" onchange="filterProducts()">
-                <option value="all">All Categories</option>
-                <option value="shampoos">Shampoos</option>
-                <option value="treatments">Treatments</option>
-            </select>
+        <div class="category-choice">
+            <button id="grooming-button" class="active" onclick="showSubcategories('grooming')">Grooming
+                Products</button>
+            <button id="vitamins-button" onclick="showSubcategories('vitamins')">Vitamins</button>
+        </div>
+
+        <div id="grooming-subcategories" class="subcategory-choice">
+            <button id="soap-bar-button" class="active" onclick="showProducts('soap-bar')">Soap Bar</button>
+            <button id="shampoo-button" onclick="showProducts('shampoo')">Shampoo</button>
+            <button id="ear-care-button" onclick="showProducts('ear-care')">Ear Care</button>
+            <button id="eye-care-button" onclick="showProducts('eye-care')">Eye Care</button>
+            <button id="fragrances-button" onclick="showProducts('fragrances')">Fragrances</button>
+            <button id="powder-button" onclick="showProducts('powder')">Powder</button>
+            <button id="spray-button" onclick="showProducts('spray')">Spray</button>
+        </div>
+
+        <div id="vitamins-subcategories" class="subcategory-choice" style="display: none;">
+            <button id="multivitamins-button" class="active"
+                onclick="showProducts('multivitamins')">Multivitamins</button>
+            <button id="iron-button" onclick="showProducts('iron')">Iron</button>
+            <button id="vitamin-c-button" onclick="showProducts('vitamin-c')">Vitamin C</button>
+            <button id="ob-supplements-button" onclick="showProducts('ob-supplements')">OB Supplements</button>
+            <button id="milk-button" onclick="showProducts('milk')">Milk</button>
         </div>
 
         <div class="content-section">
             <div class="content">
-                <h2>Shampoos</h2>
-                <div class="products-grid shampoos" data-category="shampoos">
-                    <div class="product" data-name="madre de cacao shampoo natural">
-                        <img src="images/products/madre de cacao.jpg" alt="Madre De Cacao Shampoo"
-                            onclick="location.href='productss/madre-de-cacao.html'">
-                        <h3>Madre De Cacao Shampoo</h3>
-                        <p>Natural pet shampoo for healthy skin and coat.</p>
-                        <p class="price">₱700.99</p>
-                        <a class="view-details" href="productss/madre-de-cacao.html">View Details</a>
-                    </div>
-                    <div class="product" data-name="vco sulfur shampoo medicated sensitive skin">
-                        <img src="images/products/vco.jpg" alt="VCO + Sulfur Shampoo Bar"
-                            onclick="location.href='productss/vco-sulfur.html'">
-                        <h3>VCO + Sulfur Shampoo Bar</h3>
-                        <p>Medicated shampoo bar for sensitive skin.</p>
-                        <p class="price">500.99</p>
-                        <a class="view-details" href="productss/vco-sulfur.html">View Details</a>
-                    </div>
-
-                    <div class="product" data-name="vco sulfur shampoo medicated sensitive skin">
-                        <img src="images/products/vco.jpg" alt="VCO + Sulfur Shampoo Bar"
-                            onclick="location.href='productss/vco-sulfur.html'">
-                        <h3>VCO + Sulfur Shampoo Bar</h3>
-                        <p>Medicated shampoo bar for sensitive skin.</p>
-                        <p class="price">500.99</p>
-                        <a class="view-details" href="productss/vco-sulfur.html">View Details</a>
-                    </div>
-
-                    <div class="product" data-name="vco sulfur shampoo medicated sensitive skin">
-                        <img src="images/products/vco.jpg" alt="VCO + Sulfur Shampoo Bar"
-                            onclick="location.href='productss/vco-sulfur.html'">
-                        <h3>VCO + Sulfur Shampoo Bar</h3>
-                        <p>Medicated shampoo bar for sensitive skin.</p>
-                        <p class="price">500.99</p>
-                        <a class="view-details" href="productss/vco-sulfur.html">View Details</a>
-                    </div>
-
-                    <div class="product" data-name="madre de cacao shampoo natural">
-                        <img src="images/products/madre de cacao.jpg" alt="Madre De Cacao Shampoo"
-                            onclick="location.href='productss/madre-de-cacao.html'">
-                        <h3>Madre De Cacao Shampoo</h3>
-                        <p>Natural pet shampoo for healthy skin and coat.</p>
-                        <p class="price">₱700.99</p>
-                        <a class="view-details" href="productss/madre-de-cacao.html">View Details</a>
-                    </div>
-
-                </div>
-
-                <h2>Treatments</h2>
-                <div class="products-grid treatments" data-category="treatments">
-                    <div class="product" data-name="flea treatment product 3 ticks">
-                        <img src="images/products/product3.jpg" alt="Product 3"
-                            onclick="location.href='products/product3-details.html'">
-                        <h3>Product 3</h3>
-                        <p>Effective treatment for fleas and ticks.</p>
-                        <p class="price">₱1249.99</p>
-                        <a class="view-details" href="products/product3-details.html">View Details</a>
+                <div id="soap-bar" class="category-content">
+                    <h2>Soap Bar</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="herbal soap bar">
+                            <img src="images/products/madre de cacao.jpg" alt="Herbal Soap Bar">
+                            <h3>Madre De Cacao Shampoo</h3>
+                            <p>Natural herbal soap for sensitive skin.</p>
+                            <p class="price">₱299.99</p>
+                            <a class="view-details" href="productss/madre-de-cacao.html">View Details</a>
+                        </div>
+                        <div class="product" data-name="antibacterial soap bar">
+                            <img src="images/products/antibacterial-soap.jpg" alt="Antibacterial Soap Bar">
+                            <h3>Antibacterial Soap Bar</h3>
+                            <p>Effective against germs and bacteria.</p>
+                            <p class="price">₱349.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="moisturizing soap bar">
+                            <img src="images/products/moisturizing-soap.jpg" alt="Moisturizing Soap Bar">
+                            <h3>Moisturizing Soap Bar</h3>
+                            <p>Keeps skin hydrated and smooth.</p>
+                            <p class="price">₱399.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
                     </div>
                 </div>
+
+                <div id="shampoo" class="category-content" style="display: none;">
+                    <h2>Shampoo</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="madre de cacao shampoo natural">
+                            <img src="images/products/madre-de-cacao.jpg" alt="Madre De Cacao Shampoo">
+                            <h3>Madre De Cacao Shampoo</h3>
+                            <p>Natural pet shampoo for healthy skin and coat.</p>
+                            <p class="price">₱700.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="vco sulfur shampoo medicated sensitive skin">
+                            <img src="images/products/vco.jpg" alt="VCO + Sulfur Shampoo Bar">
+                            <h3>VCO + Sulfur Shampoo Bar</h3>
+                            <p>Medicated shampoo bar for sensitive skin.</p>
+                            <p class="price">₱500.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="oatmeal shampoo soothing skin">
+                            <img src="images/products/oatmeal-shampoo.jpg" alt="Oatmeal Shampoo">
+                            <h3>Oatmeal Shampoo</h3>
+                            <p>Soothing shampoo for dry, itchy skin.</p>
+                            <p class="price">₱600.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ear-care" class="category-content" style="display: none;">
+                    <h2>Ear Care</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="ear cleaning solution">
+                            <img src="images/products/ear-cleaning-solution.jpg" alt="Ear Cleaning Solution">
+                            <h3>Ear Cleaning Solution</h3>
+                            <p>Gently cleans and soothes ears.</p>
+                            <p class="price">₱450.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="ear mite treatment">
+                            <img src="images/products/ear-mite-treatment.jpg" alt="Ear Mite Treatment">
+                            <h3>Ear Mite Treatment</h3>
+                            <p>Effective against ear mites.</p>
+                            <p class="price">₱550.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="ear wax removal drops">
+                            <img src="images/products/ear-wax-removal.jpg" alt="Ear Wax Removal Drops">
+                            <h3>Ear Wax Removal Drops</h3>
+                            <p>Helps remove excess ear wax.</p>
+                            <p class="price">₱500.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="eye-care" class="category-content" style="display: none;">
+                    <h2>Eye Care</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="eye cleaning wipes">
+                            <img src="images/products/eye-cleaning-wipes.jpg" alt="Eye Cleaning Wipes">
+                            <h3>Eye Cleaning Wipes</h3>
+                            <p>Convenient eye cleaning wipes.</p>
+                            <p class="price">₱300.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="tear stain remover">
+                            <img src="images/products/tear-stain-remover.jpg" alt="Tear Stain Remover">
+                            <h3>Tear Stain Remover</h3>
+                            <p>Removes unsightly tear stains.</p>
+                            <p class="price">₱350.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="eye drops">
+                            <img src="images/products/eye-drops.jpg" alt="Eye Drops">
+                            <h3>Eye Drops</h3>
+                            <p>Lubricates and soothes dry eyes.</p>
+                            <p class="price">₱400.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fragrances" class="category-content" style="display: none;">
+                    <h2>Fragrances</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="pet cologne spray">
+                            <img src="images/products/pet-cologne.jpg" alt="Pet Cologne Spray">
+                            <h3>Pet Cologne Spray</h3>
+                            <p>Keeps your pet smelling fresh.</p>
+                            <p class="price">₱299.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="natural fragrance mist">
+                            <img src="images/products/natural-fragrance.jpg" alt="Natural Fragrance Mist">
+                            <h3>Natural Fragrance Mist</h3>
+                            <p>Light, refreshing fragrance for pets.</p>
+                            <p class="price">₱349.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="deodorizing spray">
+                            <img src="images/products/deodorizing-spray.jpg" alt="Deodorizing Spray">
+                            <h3>Deodorizing Spray</h3>
+                            <p>Neutralizes pet odors instantly.</p>
+                            <p class="price">₱399.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="powder" class="category-content" style="display: none;">
+                    <h2>Powder</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="talc-free pet powder">
+                            <img src="images/products/talc-free-powder.jpg" alt="Talc-Free Pet Powder">
+                            <h3>Talc-Free Pet Powder</h3>
+                            <p>Absorbs moisture and reduces odor.</p>
+                            <p class="price">₱299.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="anti-itch powder">
+                            <img src="images/products/anti-itch-powder.jpg" alt="Anti-Itch Powder">
+                            <h3>Anti-Itch Powder</h3>
+                            <p>Relieves itching and irritation.</p>
+                            <p class="price">₱349.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="calming powder">
+                            <img src="images/products/calming-powder.jpg" alt="Calming Powder">
+                            <h3>Calming Powder</h3>
+                            <p>Helps calm anxious pets.</p>
+                            <p class="price">₱399.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="spray" class="category-content" style="display: none;">
+                    <h2>Spray</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="flea and tick spray">
+                            <img src="images/products/flea-tick-spray.jpg" alt="Flea and Tick Spray">
+                            <h3>Flea and Tick Spray</h3>
+                            <p>Protects pets from fleas and ticks.</p>
+                            <p class="price">₱499.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="antibacterial spray">
+                            <img src="images/products/antibacterial-spray.jpg" alt="Antibacterial Spray">
+                            <h3>Antibacterial Spray</h3>
+                            <p>Kills bacteria and disinfects.</p>
+                            <p class="price">₱549.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="soothing spray">
+                            <img src="images/products/soothing-spray.jpg" alt="Soothing Spray">
+                            <h3>Soothing Spray</h3>
+                            <p>Relieves irritated and itchy skin.</p>
+                            <p class="price">₱599.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="multivitamins" class="category-content" style="display: none;">
+                    <h2>Multivitamins</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="daily multivitamins supplement">
+                            <img src="images/products/daily-multivitamins.jpg" alt="Daily Multivitamins">
+                            <h3>Daily Multivitamins</h3>
+                            <p>Complete multivitamin supplement for pets.</p>
+                            <p class="price">₱899.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="chewable multivitamins">
+                            <img src="images/products/chewable-multivitamins.jpg" alt="Chewable Multivitamins">
+                            <h3>Chewable Multivitamins</h3>
+                            <p>Easy-to-administer chewable multivitamins.</p>
+                            <p class="price">₱950.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="liquid multivitamins drops">
+                            <img src="images/products/liquid-multivitamins.jpg" alt="Liquid Multivitamins">
+                            <h3>Liquid Multivitamins</h3>
+                            <p>Liquid drops for easy mixing with food.</p>
+                            <p class="price">₱1050.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="iron" class="category-content" style="display: none;">
+                    <h2>Iron</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="iron supplement for dogs">
+                            <img src="images/products/iron-supplement.jpg" alt="Iron Supplement for Dogs">
+                            <h3>Iron Supplement for Dogs</h3>
+                            <p>Boosts iron levels and energy in pets.</p>
+                            <p class="price">₱800.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="chewable iron tablets">
+                            <img src="images/products/chewable-iron.jpg" alt="Chewable Iron Tablets">
+                            <h3>Chewable Iron Tablets</h3>
+                            <p>Iron-rich chewable tablets for pets.</p>
+                            <p class="price">₱850.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="liquid iron drops">
+                            <img src="images/products/liquid-iron.jpg" alt="Liquid Iron Drops">
+                            <h3>Liquid Iron Drops</h3>
+                            <p>Convenient liquid iron supplement.</p>
+                            <p class="price">₱900.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="vitamin-c" class="category-content" style="display: none;">
+                    <h2>Vitamin C</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="vitamin c supplement for pets">
+                            <img src="images/products/vitamin-c-supplement.jpg" alt="Vitamin C Supplement for Pets">
+                            <h3>Vitamin C Supplement for Pets</h3>
+                            <p>Supports immune health in pets.</p>
+                            <p class="price">₱600.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="chewable vitamin c tablets">
+                            <img src="images/products/chewable-vitamin-c.jpg" alt="Chewable Vitamin C Tablets">
+                            <h3>Chewable Vitamin C Tablets</h3>
+                            <p>Delicious chewable vitamin C for pets.</p>
+                            <p class="price">₱650.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="liquid vitamin c drops">
+                            <img src="images/products/liquid-vitamin-c.jpg" alt="Liquid Vitamin C Drops">
+                            <h3>Liquid Vitamin C Drops</h3>
+                            <p>Liquid vitamin C for easy dosing.</p>
+                            <p class="price">₱700.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ob-supplements" class="category-content" style="display: none;">
+                    <h2>OB Supplements</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="prenatal supplement for pets">
+                            <img src="images/products/prenatal-supplement.jpg" alt="Prenatal Supplement for Pets">
+                            <h3>Prenatal Supplement for Pets</h3>
+                            <p>Supports pregnancy health in pets.</p>
+                            <p class="price">₱900.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="postnatal supplement">
+                            <img src="images/products/postnatal-supplement.jpg" alt="Postnatal Supplement">
+                            <h3>Postnatal Supplement</h3>
+                            <p>Supports recovery and lactation in pets.</p>
+                            <p class="price">₱950.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="fertility booster">
+                            <img src="images/products/fertility-booster.jpg" alt="Fertility Booster">
+                            <h3>Fertility Booster</h3>
+                            <p>Boosts fertility and reproductive health.</p>
+                            <p class="price">₱1000.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="milk" class="category-content" style="display: none;">
+                    <h2>Milk</h2>
+                    <div class="products-grid">
+                        <div class="product" data-name="puppy milk replacer">
+                            <img src="images/products/puppy-milk-replacer.jpg" alt="Puppy Milk Replacer">
+                            <h3>Puppy Milk Replacer</h3>
+                            <p>Complete milk replacer for puppies.</p>
+                            <p class="price">₱750.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="kitten milk replacer">
+                            <img src="images/products/kitten-milk-replacer.jpg" alt="Kitten Milk Replacer">
+                            <h3>Kitten Milk Replacer</h3>
+                            <p>Nutrient-rich milk replacer for kittens.</p>
+                            <p class="price">₱800.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                        <div class="product" data-name="goat milk for pets">
+                            <img src="images/products/goat-milk.jpg" alt="Goat Milk for Pets">
+                            <h3>Goat Milk for Pets</h3>
+                            <p>Natural goat milk for all pets.</p>
+                            <p class="price">₱850.99</p>
+                            <a class="view-details" href="#">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -352,17 +678,55 @@
         </footer>
 
         <script>
-            function filterProducts() {
-                const selectedCategory = document.getElementById('categoryFilter').value;
-                const productsGrids = document.querySelectorAll('.products-grid');
+            function initializePage() {
+                // Start with Grooming Products and Soap Bar selected
+                showSubcategories('grooming');
+                showProducts('soap-bar');
+            }
 
-                productsGrids.forEach(grid => {
-                    if (selectedCategory === 'all' || grid.dataset.category === selectedCategory) {
-                        grid.style.display = 'grid';
-                    } else {
-                        grid.style.display = 'none';
-                    }
-                });
+            function showSubcategories(category) {
+                const groomingSubcategories = document.getElementById('grooming-subcategories');
+                const vitaminsSubcategories = document.getElementById('vitamins-subcategories');
+                const groomingButton = document.getElementById('grooming-button');
+                const vitaminsButton = document.getElementById('vitamins-button');
+
+                if (category === 'grooming') {
+                    groomingSubcategories.style.display = 'flex';
+                    vitaminsSubcategories.style.display = 'none';
+                    groomingButton.classList.add('active');
+                    vitaminsButton.classList.remove('active');
+                    showProducts('soap-bar');
+                } else if (category === 'vitamins') {
+                    groomingSubcategories.style.display = 'none';
+                    vitaminsSubcategories.style.display = 'flex';
+                    groomingButton.classList.remove('active');
+                    vitaminsButton.classList.add('active');
+                    showProducts('multivitamins');
+                }
+
+                // Hide all category content sections initially
+                const categoryContents = document.querySelectorAll('.category-content');
+                categoryContents.forEach(content => content.style.display = 'none');
+            }
+
+            function showProducts(subcategory) {
+                // Remove active class from all subcategory buttons
+                const subcategoryButtons = document.querySelectorAll('.subcategory-choice button');
+                subcategoryButtons.forEach(button => button.classList.remove('active'));
+
+                // Add active class to the selected subcategory button
+                const selectedButton = document.getElementById(subcategory + '-button');
+                selectedButton.classList.add('active');
+
+                // Hide all category content sections
+                const categoryContents = document.querySelectorAll('.category-content');
+                categoryContents.forEach(content => content.style.display = 'none');
+
+                // Show the selected subcategory content
+                const selectedCategoryContent = document.getElementById(subcategory);
+                if (selectedCategoryContent) {
+                    selectedCategoryContent.style.display = 'block';
+                }
             }
 
             function searchProducts() {
