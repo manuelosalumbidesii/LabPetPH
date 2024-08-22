@@ -43,7 +43,7 @@
                 margin: 0;
                 font-size: 2.5em;
                 color: #333;
-                font-family: 'Pacifico', cursive;
+                font-family: 'arail';
                 margin-left: -26%;
                 flex: 1;
                 text-align: center;
@@ -679,9 +679,8 @@
 
         <script>
             function initializePage() {
-                // Start with Grooming Products and Soap Bar selected
+                // Initialize by showing Grooming Products with Soap Bar selected
                 showSubcategories('grooming');
-                showProducts('soap-bar');
             }
 
             function showSubcategories(category) {
@@ -695,18 +694,16 @@
                     vitaminsSubcategories.style.display = 'none';
                     groomingButton.classList.add('active');
                     vitaminsButton.classList.remove('active');
+                    // Automatically show Soap Bar products when Grooming is selected
                     showProducts('soap-bar');
                 } else if (category === 'vitamins') {
                     groomingSubcategories.style.display = 'none';
                     vitaminsSubcategories.style.display = 'flex';
                     groomingButton.classList.remove('active');
                     vitaminsButton.classList.add('active');
+                    // Automatically show Multivitamins products when Vitamins is selected
                     showProducts('multivitamins');
                 }
-
-                // Hide all category content sections initially
-                const categoryContents = document.querySelectorAll('.category-content');
-                categoryContents.forEach(content => content.style.display = 'none');
             }
 
             function showProducts(subcategory) {
@@ -716,7 +713,9 @@
 
                 // Add active class to the selected subcategory button
                 const selectedButton = document.getElementById(subcategory + '-button');
-                selectedButton.classList.add('active');
+                if (selectedButton) {
+                    selectedButton.classList.add('active');
+                }
 
                 // Hide all category content sections
                 const categoryContents = document.querySelectorAll('.category-content');
@@ -743,6 +742,7 @@
                     }
                 });
             }
+
         </script>
     </body>
 

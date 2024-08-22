@@ -7,7 +7,6 @@
         <meta name="description" content="Contact LabPetPH for inquiries about our pet products and services.">
         <meta name="keywords" content="contact, pet products, LabPetPH">
         <title>LabPetPH - Contact</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
@@ -32,20 +31,14 @@
                 flex-wrap: wrap;
             }
 
-            header img {
-                height: 60px;
-                width: 60px;
-                border-radius: 50%;
-            }
-
             header h1 {
                 margin: 0;
                 font-size: 2.5em;
                 color: #333;
-                font-family: 'Pacifico', cursive;
+                font-family: 'arail';
                 flex: 1;
                 text-align: center;
-                margin-left: -34%;
+                margin-left: -48%;
             }
 
             nav {
@@ -80,80 +73,18 @@
                 font-size: 1.5em;
                 margin-bottom: 30px;
                 color: #333;
-                margin-top: -20px;
             }
 
-            .contact-section {
-                display: flex;
-                gap: 40px;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-bottom: 40px;
+            .shop-image {
+                width: 100%;
+                max-width: 600px;
+                margin-bottom: 30px;
             }
 
-            .contact-card {
-                background-color: #fff;
-                border-radius: 10px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                padding: 30px;
+            .contact-info {
                 text-align: center;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                width: 280px;
-            }
-
-            .contact-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .contact-card img {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin-bottom: 15px;
-                border: 3px solid #FFB22C;
-            }
-
-            .contact-card h3 {
-                color: #333;
-                margin-bottom: 10px;
-                font-size: 1.4em;
-            }
-
-            .contact-card p {
-                font-size: 1em;
+                font-size: 1.2em;
                 color: #555;
-                margin: 5px 0;
-            }
-
-            .social-icons {
-                text-align: center;
-                margin-top: -15px;
-            }
-
-            .social-icons a {
-                margin: 0 20px;
-                transition: color 0.3s ease;
-                font-size: 3em;
-            }
-
-            .social-icons a.facebook {
-                color: #3b5998;
-                /* Facebook Blue */
-            }
-
-            .social-icons a.instagram {
-                color: #E1306C;
-                /* Instagram Pink */
-            }
-
-            .social-icons a.twitter {
-                color: #1DA1F2;
-                /* Twitter Blue */
-            }
-
-            .social-icons a:hover {
-                color: #FFB22C;
             }
 
             footer {
@@ -197,13 +128,12 @@
                     text-align: center;
                 }
 
-                .contact-card {
-                    width: 100%;
-                    max-width: 400px;
+                .shop-image {
+                    max-width: 100%;
                 }
 
-                .social-icons a {
-                    font-size: 2.5em;
+                .contact-info {
+                    font-size: 1em;
                 }
             }
         </style>
@@ -211,40 +141,21 @@
 
     <body>
         <header>
-            <img src="images/logo.jpg" alt="LabPetPH Logo">
             <h1>LabPetPH</h1>
             <nav>
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
-                <a href="products.html"><i class="fas fa-paw"></i> Products</a>
-                <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
-                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </header>
 
         <div class="content">
             <h2>Contact Us</h2>
-            <div class="contact-section">
-                <div class="contact-card">
-                    <img src="images/contacts/owner.png" alt="Majesta Latagan">
-                    <h3>Majesta Latagan</h3>
-                    <p>Owner</p>
-                    <p>Email: majesta@labpetph.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                </div>
-                <div class="contact-card">
-                    <img src="images/contacts/owner1.png" alt="Weweng Latagan">
-                    <h3>Weweng Latagan</h3>
-                    <p>Sales Manager</p>
-                    <p>Email: weweng@labpetph.com</p>
-                    <p>Phone: (123) 456-7891</p>
-                </div>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=100083053856175" target="_blank" class="facebook"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+            <img src="images/shop-image.jpg" alt="LabPetPH Shop" class="shop-image">
+            <div class="contact-info">
+                <p>Email: contact@labpetph.com</p>
+                <p>Phone: (123) 456-7890</p>
             </div>
         </div>
 
